@@ -36,11 +36,11 @@ RUN apt-get install -y unzip
 
 # Install gradle
 RUN cd /opt && wget --output-document=gradle.zip \
-    https://services.gradle.org/distributions/gradle-2.14.1-bin.zip \
+    https://services.gradle.org/distributions/gradle-3.3-all.zip \
     && unzip gradle.zip && rm -f gradle.zip \
-    && chown -R root.root gradle-2.14.1
+    && chown -R root.root gradle-3.3
 
-ENV GRADLE_HOME=/opt/gradle-2.14.1
+ENV GRADLE_HOME=/opt/gradle-3.3
 ENV PATH=$PATH:$GRADLE_HOME/bin
 
 # Install Git
