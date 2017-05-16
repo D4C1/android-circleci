@@ -43,6 +43,9 @@ RUN cd /opt && wget --output-document=gradle.zip \
 ENV GRADLE_HOME=/opt/gradle-2.14.1
 ENV PATH=$PATH:$GRADLE_HOME/bin
 
+# Install Git
+RUN apt-get install -y git
+
 # Cleaning
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
