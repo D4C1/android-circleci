@@ -25,11 +25,18 @@ RUN cd /opt && wget --output-document=android-sdk.tgz --quiet \
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
+
+
 # Install sdk elements
 COPY tools /opt/tools
 ENV PATH ${PATH}:/opt/tools
 RUN ["/opt/tools/android-accept-licenses.sh", \
     "android update sdk --all --force --no-ui --filter platform-tools,tools,build-tools-25,build-tools-25.0.0,android-25,addon-google_apis_x86-google-25,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services,sys-img-armeabi-v7a-android-25"]
+
+# Add licences codes
+RUN mkdir "$ANDROID_HOME/licenses" || true \
+    && echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license" \
+    && echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
 
 RUN apt-get install -y unzip
 
@@ -48,4 +55,3 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Go to workspace
 RUN mkdir -p /opt/workspace
 WORKDIR /opt/workspace
-
