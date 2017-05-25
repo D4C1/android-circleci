@@ -1,6 +1,6 @@
 # android-circleci
 
-[![](https://images.microbadger.com/badges/version/moisesgsaa/android-circleci:0.4.0.svg)](https://microbadger.com/images/moisesgsaa/android-circleci:0.4.0 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/moisesgsaa/android-circleci:0.4.0.svg)](https://microbadger.com/images/moisesgsaa/android-circleci:0.4.0 "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/moisesgsaa/android-circleci:0.5.0.svg)](https://microbadger.com/images/moisesgsaa/android-circleci:0.5.0 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/moisesgsaa/android-circleci:0.5.0.svg)](https://microbadger.com/images/moisesgsaa/android-circleci:0.5.0 "Get your own image badge on microbadger.com")
 
 
 Docker Image for Android.
